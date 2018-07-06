@@ -2,12 +2,17 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 class main {
 
     static boolean valid;
     static String encoded;
     static String adjusted;
+    static ArrayList<String> list = new ArrayList<String>();
+    static int[] arr = new int[26];
+    static ArrayList<Integer> tempList = new ArrayList<Integer>();
 
     public static boolean check_for_word(String word) {
         try {
@@ -49,22 +54,48 @@ class main {
         }
     }
 
+    public static void create_adjusted_list() {
+        for (int i = 0; i < 26; i++) {
+            shift_message();
+            list.add(adjusted);
+        }
+        shift_message();
+    }
+
+    static public ArrayList<Integer> getIndecesofLargest(int[] arr)
+    {
+        int max = Integer.MIN_VALUE;
+        ArrayList<Integer> maxIndices = new ArrayList<Integer>();
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == max)
+                maxIndices.add(i);
+            else if (arr[i] > max) {
+                maxIndices.clear();
+                maxIndices.add(i);
+                max = arr[i];
+            }
+        }
+        return maxIndices;
+    }
 
     public static void main(String[] args) {
-        prompt();
-
         valid = false;
+        prompt();
         adjusted = encoded;
-        shift_message();
+        create_adjusted_list();
 
-        for (int i=0; i<25; i++) {
-            for (int j=3; j<=encoded.length(); j++) {
-                if (check_for_word(adjusted.substring(0, j))) {
-                    System.out.println(adjusted);
-                    j=encoded.length();
+        for (int i = 0; i < encoded.length(); i++) {
+            for (int j = 0; j < 26; j++) {
+                for (int k = i + 3; k <= encoded.length(); k++) {
+                    if (check_for_word(adjusted.substring(i, k)))
+                        arr[j]++;
                 }
+                shift_message();
             }
-            shift_message();
+        }
+
+        for (Integer i : getIndecesofLargest(arr)) {
+            System.out.println(list.get(i));
         }
     }
 }
