@@ -7,7 +7,6 @@ import java.util.Arrays;
 
 class main {
 
-    static boolean valid;
     static String encoded;
     static String adjusted;
     static ArrayList<String> list = new ArrayList<String>();
@@ -79,7 +78,6 @@ class main {
     }
 
     public static void main(String[] args) {
-        valid = false;
         prompt();
         adjusted = encoded;
         create_adjusted_list();
