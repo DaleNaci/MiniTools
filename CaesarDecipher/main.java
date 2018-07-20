@@ -86,7 +86,7 @@ class main {
             for (int j = 0; j < 26; j++) {
                 for (int k = i + 3; k <= encoded.length(); k++) {
                     if (check_for_word(adjusted.substring(i, k))) {
-                        // System.out.println(adjusted);
+                        System.out.println(adjusted);
                         arr[j]++;
                     }
                 }
@@ -97,11 +97,11 @@ class main {
         for (Integer i : getIndecesofLargest(arr)) {
             System.out.println(list.get(i));
         }
-        // for (int i = 0; i < 26; i++) {
-        //     tempList.add(arr[i]);
-        // }
-        // System.out.println(list);
-        // System.out.println(tempList);
+        for (int i = 0; i < 26; i++) {
+            tempList.add(arr[i]);
+        }
+        System.out.println(list);
+        System.out.println(tempList);
 
     }
 }

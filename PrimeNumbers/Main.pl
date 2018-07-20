@@ -1,0 +1,1 @@
+print "$_\n"for ^prompt("Enter Maximum Number: ") .grep: *.is-prime
