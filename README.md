@@ -6,3 +6,6 @@
 
 <h3>Dice Roller</h3>
 <p>This program can roll any type and number of dice, and add them all together. This is extremely useful, specifically for games such as Dungeons & Dragons, where you need an abundant quantity of dice in order to play. All of those dice can be replaced by this simple program.
+
+<h3>Prime Number Generator</h3>
+<p>Enter a number, and it will return all prime numbers leading up to that number.</p>
