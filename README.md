@@ -9,3 +9,6 @@
 
 <h3>Prime Number Generator</h3>
 <p>Enter a number, and it will return all prime numbers leading up to that number.</p>
+
+<h3>Statistics Calculator</h3>
+<p>Basic parser that takes in a comma+space separated string input and returns the mean and standard deviation of the numbers. Used for my statistics class (MATH 333).</p>
